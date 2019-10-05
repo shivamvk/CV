@@ -140,6 +140,8 @@
 \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
 \newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
 \newcommand{\cvmail}[1]{\renewcommand{\cvmail}{#1}}
+\newcommand{\cvtwitter}[1]{\renewcommand{\cvtwitter}{#1}}
+\newcommand{\cvmedium}[1]{\renewcommand{\cvmedium}{#1}}
 \newcommand{\cvnumberphone}[1]{\renewcommand{\cvnumberphone}{#1}}
 \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
@@ -193,16 +195,12 @@
     %------------------------------------------------
     
     {\Large\color{black!80}\cvjobtitle}
-
-    %------------------------------------------------
+    \vspace{2mm}
+    \profilesection{}{}
     
-    \vspace{1mm}
-    
-    \profilesection{}{6cm} 
-        
-        \projects
-        
+    \projects
         \vspace{4mm}
+        
     \profilesection{Skills}{4cm}
     
     {\large \textbf{Overview}}
@@ -219,47 +217,63 @@
          
         \vspace{4mm}
         
-         {\large \textbf{Contact}} 
+         {\large \textbf{~Contact}} 
          
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
-      \ifthenelse{\equal{\cvnumberphone}{}}{}{
-      		{$
-              \begin{array}{l}
-              \hspace{4mm} \Huge \textnormal{\faMobile} 
-              \end{array}
-              $} 
-            & \cvnumberphone\\}
-            
-      \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
-            {$
-              \begin{array}{l}
-              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
-              \end{array}
-              $} 
-            & \href{http://\cvsite}{\cvsite} \\}
+    
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
+              \hspace{0mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
               \end{array}
               $} 
             & \href{mailto:\cvmail}{\cvmail} \\}
       
+      \ifthenelse{\equal{\cvtwitter}{}}{}{
+            {$
+              \begin{array}{l}
+              \hspace{0.2mm} \huge \textnormal{\textcolor{linkedin}{\faTwitter}}
+              \end{array}
+              $} & \href{https://www.twitter.com\cvtwitter}{\cvtwitter} \\
+            }  
+      
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \hspace{0.2mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
               \end{array}
               $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
             }  
         \ifthenelse{\equal{\cvgithub}{}}{}{
             {$
               \begin{array}{l}
-              \hspace{3mm} \huge \textnormal{\faGithub}
+              \hspace{0.2mm} \huge \textnormal{\faGithub}
               \end{array}
               $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
             }   
+             \ifthenelse{\equal{\cvmedium}{}}{}{
+            {$
+              \begin{array}{l}
+              \hspace{0.2mm} \huge \textnormal{\faMedium}
+              \end{array}
+              $} & \href{https://www.medium.com/\cvmedium}{\cvmedium} \\
+            }   
+             \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
+            {$
+              \begin{array}{l}
+              \hspace{0.2mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
+              \end{array}
+              $} 
+            & \href{http://\cvsite}{\cvsite} \\}
+            
+              \ifthenelse{\equal{\cvnumberphone}{}}{}{
+      		{$
+              \begin{array}{l}
+              \hspace{1.3mm} \Huge \textnormal{\faMobile} 
+              \end{array}
+              $} 
+            & \cvnumberphone\\}
             
     \end{tabular}
 
